@@ -48,3 +48,14 @@ $ cd ~/Linux_for_Tegra/source/kernel/kernel-jammy-src
 $ zcat /proc/config.gz > .config
 $ exit
 ```
+
+### 9.OpenSSL 라이브러리의 개발용 패키지 설치
+```
+$ sudo apt update
+$ sudo apt install -y libssl-dev
+```
+
+### 10.리눅스 커널 소스 트리에서 외부 모듈(ko 파일)을 빌드할 수 있도록 사전 준비
+```
+$ sudo make modules_prepare
+```
