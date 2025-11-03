@@ -59,3 +59,19 @@ $ sudo apt install -y libssl-dev
 ```
 $ sudo make modules_prepare
 ```
+
+### 11.gs_usb.c를 모듈로 빌드할 수 있도록 Makefile에 설정을 추가
+```
+$ cd ~/Linux_for_Tegra/source/kernel/kernel-jammy-src/drivers/net/can/usb
+$ echo "obj-m += gs_usb.o" | sudo tee -a Makefile
+```
+
+### 12.드라이버 모듈 빌드
+```
+$ sudo make -C ~/Linux_for_Tegra/source/kernel/kernel-jammy-src M=$(pwd) modules
+```
+
+### 13. 커널 모듈을 커널에 직접 삽입
+```
+$ sudo insmod gs_usb.ko
+```
